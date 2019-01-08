@@ -1,6 +1,11 @@
 # jest-cheat-sheet
 :microscope: My cheat sheet for testing vue components with jest
 
+Useful links: 
+* [jest documentation](https://jestjs.io/docs/en/getting-started)
+* [globals](https://jestjs.io/docs/en/api)
+* [expect](https://jestjs.io/docs/en/expect)
+
 ## Setuping jest 
 Follow these steps for the most basic jest setup:
 1. ```npm i --save-dev jest```

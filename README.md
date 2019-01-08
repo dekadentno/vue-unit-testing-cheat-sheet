@@ -11,7 +11,8 @@ Follow these steps for the most basic jest setup:
 1. ```npm i --save-dev jest```
 2. add ```"unit": "jest"``` to your package.json file
 3. create ```Component.spec.js``` file in the component folder
-4. Write tests in the ```Component.spec.js``` file and run it with ```npm run unit```
+4. add ```jest: true``` to your ```.eslintrc.js``` file (so that eslint knows the jest keywords like describe, expect etc.)
+5. Write tests in the ```Component.spec.js``` file and run it with ```npm run unit```
 
 ### Sanity test
 ```javascript

@@ -1,6 +1,8 @@
 # jest-cheat-sheet
 :microscope: My cheat sheet for testing vue components with jest
 
+Remark: I have no clue about (unit) testing, so these examples might not be in terms of good/best practices. 
+
 Useful links: 
 * [jest documentation](https://jestjs.io/docs/en/getting-started)
 * [globals](https://jestjs.io/docs/en/api)

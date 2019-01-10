@@ -1,5 +1,5 @@
-# jest-cheat-sheet
-:microscope: My cheat sheet for testing vue components with jest
+# Vue unit testing cheat sheet
+:microscope: My cheat sheet for testing vue components with jest and vue test utils
 
 Remark: I have no clue about (unit) testing, so these examples might not be in terms of good/best practices. 
 

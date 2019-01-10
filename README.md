@@ -62,6 +62,51 @@ describe('MyComponent', () => {
 })
 ```
 
+### Test visibility of component with passed prop
+```javascript
+test('does not render when not passed visible prop', () => {
+  const wrapper = mount(Modal)
+  expect(wrapper.isEmpty()).toBe(true)
+})
+test('render when visibility prop is true', () => {
+  const wrapper = mount(Modal, {
+    propsData: {
+      visible: true
+    }
+  })
+  expect(wrapper.isEmpty()).toBe(false)
+})
+test('call close() method when X is clicked', () => {
+  const close = jest.fn()
+  const wrapper = mount(Modal, {
+    propsData: {
+      visible: true,
+      close
+    }
+  })
+  wrapper.find('button').trigger('click')
+  expect(close).toHaveBeenCalled()
+})
+```
+
+### Snapshot test
+From the official jest documentation:
+
+*Snapshot tests are a very useful tool whenever you want to make sure your UI does not change unexpectedly.
+A typical snapshot test case for a mobile app renders a UI component, takes a screenshot, then compares it to a reference image stored alongside the test. The test will fail if the two images do not match: either the change is unexpected, or the screenshot needs to be updated to the new version of the UI component.*
+
+```javascript
+test('snapshot test', () => {
+  const wrapper = mount(Modal, {
+    propsData: {
+      visible: true
+    }
+  })
+  // wrapper.html() -> string of the html of our mounted component
+  expect(wrapper.html()).toMatchSnapshot()
+})
+```
+
 ### Test helper functions 
 ```javascript
 import { sort } from './helpers'

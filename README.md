@@ -25,6 +25,26 @@ describe('Component.vue', () => {
 })
 ```
 
+### Test Vue components
+```javascript
+// Import Vue and the component being tested
+import Vue from 'vue'
+import MyComponent from 'path/to/MyComponent.vue
+
+describe('MyComponent', () => {
+  // Inspect the raw component options
+  it('has a created hook', () => {
+    expect(typeof MyComponent.created).toBe('function')
+  })
+
+  // access the component data 
+  it('check init state of "message" from data', () => {
+    const vm = new Vue(MyComponent).$mount()
+    expect(vm.message).toBe('bla')
+  })
+})
+```
+
 ### Test helper functions 
 ```javascript
 import { sort } from './helpers'

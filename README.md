@@ -29,7 +29,7 @@ describe('Component.vue', () => {
 ```javascript
 // Import Vue and the component being tested
 import Vue from 'vue'
-import MyComponent from 'path/to/MyComponent.vue
+import MyComponent from 'path/to/MyComponent.vue'
 
 describe('MyComponent', () => {
   // Inspect the raw component options
@@ -41,6 +41,13 @@ describe('MyComponent', () => {
   it('check init state of "message" from data', () => {
     const vm = new Vue(MyComponent).$mount()
     expect(vm.message).toBe('bla')
+  })
+  
+  // pass props to child with 'propsData'
+  it('renders correctly with different props', () => {
+    const Constructor = Vue.extend(MyComponent)
+    const vm = new Constructor({ propsData: {msg: 'Hello'} }).$mount()
+    expect(vm.$el.textContent).toBe('Hello')
   })
 })
 ```

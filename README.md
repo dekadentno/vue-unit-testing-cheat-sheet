@@ -24,6 +24,16 @@ describe('Component.vue', () => {
   })
 })
 ```
+### Access Vue component
+```javascript
+// component access
+import { mount } from '@vue/test-utils'
+import Modal from '../Modal.vue'
+const wrapper = mount(Modal)
+
+wrapper.vm // access to the component instance
+wrapper.element // access to the component DOM node
+```
 
 ### Test Vue components
 ```javascript

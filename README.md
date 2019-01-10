@@ -24,3 +24,16 @@ describe('Component.vue', () => {
   })
 })
 ```
+
+### Test helper functions 
+```javascript
+import { sort } from './helpers'
+
+describe('Helper functions', () => {
+  test('it sorts the array', () => {
+    const arr = [3,1,5,4,2]
+    const res = sort(arr, 'asc')
+    expect(res).toEqual(arr.sort((a,b) => a-b))
+  })
+})
+```

@@ -232,10 +232,6 @@ describe('Helper functions', () => {
 
 ### Useful [helpers](https://github.com/MikaelEdebro/ezy-dev-session-jest)
 ```javascript
-// usage:
-// import TestHelpers from 'test/test-helpers'
-// let h = new TestHelpers(wrapper, expect)
-// h.domHas('.loader')
 class TestHelpers {
   constructor(wrapper, expect) {
     this.wrapper = wrapper
@@ -287,4 +283,10 @@ class TestHelpers {
 }
 
 export default TestHelpers
+```
+```javascript
+// how to use helpers
+import TestHelpers from 'test/test-helpers'
+let h = new TestHelpers(wrapper, expect)
+h.domHas('.loader')
 ```

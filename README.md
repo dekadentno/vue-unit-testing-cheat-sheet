@@ -60,6 +60,27 @@ describe('MyComponent', () => {
     const vm = new Constructor({ propsData: {msg: 'Hello'} }).$mount()
     expect(vm.$el.textContent).toBe('Hello')
   })
+  // usage of helper functions 
+  it('hides the body initially', () => {
+    h.domHasNot('body')
+  })
+  it('shows body when clicking title', () => {
+    h.click('title')
+    h.domHas('.body')
+  })
+  it('renders the correct title and subtitle after clicking button', () => {
+    h.click('.my-button')
+    h.see('My title')
+    h.see('My subtitle')
+  })
+  it('adds expanded class to expanded post', () => {
+    h.click('.post')
+    expect(wrapper.classes()).toContain('expanded')
+  })
+  it('show comments when expanded', () => {
+    h.click('.post')
+    h.domHas('.comment')
+  })
 })
 ```
 

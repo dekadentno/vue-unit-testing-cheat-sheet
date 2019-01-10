@@ -5,6 +5,7 @@ Remark: I have no clue about (unit) testing, so these examples might not be in t
 
 Useful links: 
 * [jest documentation](https://jestjs.io/docs/en/getting-started)
+* [vue-test-utils](https://vue-test-utils.vuejs.org/)
 * [globals](https://jestjs.io/docs/en/api)
 * [expect](https://jestjs.io/docs/en/expect)
 

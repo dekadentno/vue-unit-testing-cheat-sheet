@@ -113,7 +113,7 @@ test('call close() method when X is clicked', () => {
 })
 ```
 
-### Vuex testing and async testing
+### Vuex actions 
 Before testing anything from the vuex store, we need to "mock" (make dummy / hardcode) the store values that we want to test. In the case beneath, we simulated the result of the getComments async action to give us 2 comments.
 ```javascript
 import Vuex from 'vuex'
@@ -198,7 +198,39 @@ describe('BlogComments', () => {
   })
 })
 ```
+### Vuex mutations and getters
+Don't forget to correctly export mutations and getters so they can be accessible in the tests
+```javascript
+import { getters, mutations } from '@/store/modules/blog'
 
+describe('blog store module', () => {
+  let state
+  beforeEach(() => {
+    state = {
+      blogPosts: []
+    }
+  })
+  describe('getters', () => {
+    it('hasBlogPosts logic works', () => {
+      expect(getters.hasBlogPosts(state)).toBe(false)
+      state.blogPosts = [{}, {}]
+      expect(getters.hasBlogPosts(state)).toBe(true)
+    })
+    it('numberOfPosts returns correct count', () => {
+      expect(getters.numberOfPosts(state)).toBe(0)
+      state.blogPosts = [{}, {}]
+      expect(getters.numberOfPosts(state)).toBe(2)
+    })
+  })
+
+  describe('mutations', () => {
+    it('adds blog posts correctly', () => {
+      mutations.saveBlogPosts(state, [{ title: 'New post' }])
+      expect(state.blogPosts).toEqual([{ title: 'New post' }])
+    })
+  })
+})
+```
 
 ### Snapshot test
 From the official jest documentation:

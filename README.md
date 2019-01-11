@@ -114,6 +114,7 @@ test('call close() method when X is clicked', () => {
 ```
 
 ### Vuex testing and async testing
+Before testing anything from the vuex store, we need to "mock" (make dummy / hardcode) the store values that we want to test. In the case beneath, we simulated the result of the getComments async action to give us 2 comments.
 ```javascript
 import Vuex from 'vuex'
 import { shallow, createLocalVue } from '@vue/test-utils'

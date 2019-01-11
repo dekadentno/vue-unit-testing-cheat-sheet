@@ -19,6 +19,8 @@ Where is the right balance between what to test and what not to test? We can con
 * when a particulary complex function is receiving multiple arguments, it is a good idea to feed that function with null, undefined and unexpected data (e.g. methodNullTest, methodInvalidValueTest, methodValidValueTest)
 * when there are cases that require complex steps for reproduction and can be easily forgotten
 
+Try to keep test methods short and sweet and add them to the build.
+
 ## Setuping jest 
 Follow these steps for the most basic jest setup:
 1. ```npm i --save-dev jest```

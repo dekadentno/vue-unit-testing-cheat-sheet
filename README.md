@@ -11,6 +11,24 @@ Useful links:
 * [globals](https://jestjs.io/docs/en/api)
 * [expect](https://jestjs.io/docs/en/expect)
 
+## A few words before 
+
+The red, green, refactor approach helps developers compartmentalize their focus into three phases:
+
+* Red — think about what you want to develop
+* Green — think about how to make your tests pass
+* Refactor — think about how to improve your existing implementation
+
+![alt text](https://s3.amazonaws.com/codecademy-content/programs/tdd-js/articles/red-green-refactor-tdd.png "Taken from Codecademy")
+
+
+The red phase is always the starting point of the red, green, refactor cycle. The purpose of this phase is to write a test that informs the implementation of a feature. The test will only pass when the its expectations are met.
+
+The green phase is where you implement code to make your test pass. The goal is to find a solution, without worrying about optimizing your implementation.
+
+In the refactor phase, you are still "in the green." You can begin thinking about how to implement your code better or more efficiently.
+
+
 ## Setuping jest 
 Follow these steps for the most basic jest setup:
 1. ```npm i --save-dev jest```

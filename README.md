@@ -136,6 +136,14 @@ it("hasClose is not required", () => {
     expect(message.vm.$options.props.hasClose.required).toBeFalsy();
 })
 
+// custom events
+it("Calls handleMessageClick when @message-click happens", () => {
+  const stub = jest.fn();
+  cmp.setMethods({ handleMessageClick: stub });
+  const el = cmp.find(Message).vm.$emit("message-clicked", "cat");
+  expect(stub).toBeCalledWith("cat");
+});
+
 ```
 
 ### Test visibility of component with passed prop

@@ -71,12 +71,6 @@ describe('MyComponent', () => {
     expect(vm.message).toBe('bla')
   })
   
-  // pass props to child with 'propsData'
-  it('renders correctly with different props', () => {
-    const Constructor = Vue.extend(MyComponent)
-    const vm = new Constructor({ propsData: {msg: 'Hello'} }).$mount()
-    expect(vm.$el.textContent).toBe('Hello')
-  })
   // usage of helper functions 
   it('hides the body initially', () => {
     h.domHasNot('body')
@@ -99,6 +93,49 @@ describe('MyComponent', () => {
     h.domHas('.comment')
   })
 })
+```
+
+## Test default and passed props
+```javascript
+// we'll create a helper factory function to create a message component, give some properties
+const createCmp = propsData => mount(KaModal, { propsData });
+
+it("has a message property", () => {
+  cmp = createCmp({ message: "hey" });
+  expect(cmp.props().message).toBe("hey");
+});
+
+it("has no cat property", () => {
+  cmp = createCmp({ cat: "hey" });
+  expect(cmp.props().cat).toBeUndefined();
+});
+
+// test default value of author prop
+it("Paco is the default author", () => {
+  cmp = createCmp({ message: "hey" });
+  expect(cmp.props().author).toBe("Paco");
+});
+
+// slightly different approach
+// pass props to child with 'propsData'
+it('renders correctly with different props', () => {
+  const Constructor = Vue.extend(MyComponent)
+  const vm = new Constructor({ propsData: {msg: 'Hello'} }).$mount()
+  expect(vm.$el.textContent).toBe('Hello')
+})
+
+// prop type
+it("hasClose is bool type", () => {
+    const message = createCmp({title: "hey"});
+    expect(message.vm.$options.props.hasClose.type).toBe(Boolean);
+})
+
+// prop required
+it("hasClose is not required", () => {
+    const message = createCmp({title: "hey"});
+    expect(message.vm.$options.props.hasClose.required).toBeFalsy();
+})
+
 ```
 
 ### Test visibility of component with passed prop

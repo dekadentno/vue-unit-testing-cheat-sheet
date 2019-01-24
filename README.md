@@ -3,7 +3,7 @@
 
 Remark: In the time of making this cheat sheet, I had no clue about (unit) testing, so these examples might not be in terms of good/best practices. 
 
-:pray: Many examples in here are taken from the repos, videos and tutorials from [MikaelEdebro](https://github.com/MikaelEdebro), [Edd Yerburgh](https://github.com/eddyerburgh) and others.
+:pray: Many examples in here are taken from the repos, videos and tutorials from [MikaelEdebro](https://github.com/MikaelEdebro), [Edd Yerburgh](https://github.com/eddyerburgh), [Alex Jover](https://github.com/alexjoverm) and others.
 
 Useful links: 
 * [jest documentation](https://jestjs.io/docs/en/getting-started)
@@ -28,6 +28,11 @@ Follow these steps for the most basic jest setup:
 3. create ```Component.spec.js``` file in the component folder
 4. add ```jest: true``` to your ```.eslintrc.js``` file (so that eslint knows the jest keywords like describe, expect etc.)
 5. Write tests in the ```Component.spec.js``` file and run it with ```npm run unit```
+
+### Frequent terminology
+* Shallow Rendering - a technique that assures your component is rendering without children. This is useful for:
+  * Testing only the component you want to test (that's what Unit Test stands for)
+  * Avoid side effects that children components can have, such as making HTTP calls, calling store actions...
 
 ### Sanity test
 ```javascript

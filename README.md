@@ -173,6 +173,14 @@ test('call close() method when X is clicked', () => {
 })
 ```
 
+### Test computed properties
+```javascript
+it("returns the string in normal order", () => {
+  cmp.setData({ inputValue: "Yoo" });
+  expect(cmp.vm.reversedInput).toBe("Yoo");
+});
+```
+
 ### Vuex actions 
 Before testing anything from the vuex store, we need to "mock" (make dummy / hardcode) the store values that we want to test. In the case beneath, we simulated the result of the getComments async action to give us 2 comments.
 ```javascript

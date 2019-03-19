@@ -10,6 +10,7 @@ Useful links:
 * [vue-test-utils](https://vue-test-utils.vuejs.org/)
 * [globals](https://jestjs.io/docs/en/api)
 * [expect](https://jestjs.io/docs/en/expect)
+* https://github.com/sapegin/jest-cheat-sheet
 
 ## A few words before
 Where is the right balance between what to test and what not to test? We can consider writinh unit tests in cases like:

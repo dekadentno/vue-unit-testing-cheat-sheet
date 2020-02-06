@@ -325,16 +325,40 @@ From the official jest documentation:
 *Snapshot tests are a very useful tool whenever you want to make sure your UI does not change unexpectedly.
 A typical snapshot test case for a mobile app renders a UI component, takes a screenshot, then compares it to a reference image stored alongside the test. The test will fail if the two images do not match: either the change is unexpected, or the screenshot needs to be updated to the new version of the UI component.*
 
+You can use this plugin to improve and better control the formatting of your snapshots:
+
+* https://github.com/tjw-lint/jest-serializer-vue-tjw
+
 ```javascript
-test('snapshot test', () => {
+test('Modal renders correctly when visible: true', () => {
   const wrapper = mount(Modal, {
     propsData: {
       visible: true
     }
-  })
-  // wrapper.html() -> string of the html of our mounted component
-  expect(wrapper.html()).toMatchSnapshot()
-})
+  });
+
+  // Will store a snapshot of the entire component
+  expect(wrapper)
+    .toMatchSnapshot();
+});
+```
+
+```javascript
+test('Advanced form is shown after clicking "show more"', async () => {
+  const wrapper = mount(GenericForm);
+
+  // Target a specific element and similuate interacting with it
+  const showMore = wrapper.find('[data-test="showMore"]');
+  showMore.trigger('click');
+  
+  // Wait for the trigger event to be handled
+  await wrapper.vm.$nextTick();
+
+  // Will store a snapshot of a portion of the component containing
+  // the element that has a matching data-test attribute.
+  expect(wrapper.find('[data-test="advancedForm"]'))
+    .toMatchSnapshot();
+});
 ```
 
 ### Testing helper functions 

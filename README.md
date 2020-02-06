@@ -10,6 +10,7 @@ Useful links:
 * [vue-test-utils](https://vue-test-utils.vuejs.org/)
 * [globals](https://jestjs.io/docs/en/api)
 * [expect](https://jestjs.io/docs/en/expect)
+* [jest-serializer-vue-tjw](https://github.com/tjw-lint/jest-serializer-vue-tjw)
 * https://github.com/sapegin/jest-cheat-sheet
 
 ## A few words before

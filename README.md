@@ -52,6 +52,14 @@ Follow these steps for the most basic jest setup:
    ```
 5. Write tests in the ```Component.spec.js``` file and run it with ```npm run unit```
 
+### Things you'll almost always use
+(1) use ```mount``` to mount the component and store it in ```wrapper```
+(2) access ```data``` in a component
+(3) change a variable in ```data``` in a component
+(4) find an element in a component and check it's properties 
+(5) test props
+
+
 ### Frequent terminology
 * Shallow Rendering - a technique that assures your component is rendering without children. This is useful for:
   * Testing only the component you want to test (that's what Unit Test stands for)

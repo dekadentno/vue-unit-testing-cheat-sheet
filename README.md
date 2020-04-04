@@ -7,6 +7,7 @@ Remark: In the time of making this cheat sheet, I had no clue about (unit) testi
 
 Useful links: 
 * [jest documentation](https://jestjs.io/docs/en/getting-started)
+* [expect documentation](https://jestjs.io/docs/en/expect)
 * [vue-test-utils](https://vue-test-utils.vuejs.org/)
 * [globals](https://jestjs.io/docs/en/api)
 * [expect](https://jestjs.io/docs/en/expect)
@@ -28,6 +29,7 @@ Also, we shouldn't test the framework we are using not the 3rd party libraries. 
 Try to keep test methods short and sweet and add them to the build.
 
 ## Setuping jest 
+To avoid this chapter, if you are just starting a project or learning, just scafold a new vue project with ```vue create``` and while manually selecting features needed for your project, pick ```unit testing``` and ```Jest``` as your testing framework of choice.
 Follow these steps for the most basic jest setup:
 1. ```npm i --save-dev jest```
 2. add ```"unit": "jest"``` to your package.json file
@@ -57,7 +59,8 @@ Follow these steps for the most basic jest setup:
 (2) access ```data``` in a component
 (3) change a variable in ```data``` in a component
 (4) find an element in a component and check it's properties 
-(5) test props
+(5) trigger events like ```click``` on an element
+(6) check if a component has an html element 
 
 
 ### Frequent terminology

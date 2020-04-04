@@ -14,12 +14,14 @@ Useful links:
 * https://github.com/sapegin/jest-cheat-sheet
 
 ## A few words before
-Where is the right balance between what to test and what not to test? We can consider writinh unit tests in cases like:
+Where is the right balance between what to test and what not to test? We can consider writing unit tests in cases like:
 * when the logic behind the method is complex enough that you feel you need to test extensively to verify that it works.
 * whenever it takes less time to write a unit test to verify that code works than to start up the system, log in, recreate your scenario, etc.
 * when there are possible edge cases of unusually complex code that you think will probably have errors
 * when a particulary complex function is receiving multiple arguments, it is a good idea to feed that function with null, undefined and unexpected data (e.g. methodNullTest, methodInvalidValueTest, methodValidValueTest)
 * when there are cases that require complex steps for reproduction and can be easily forgotten
+
+It's also important to say that we have to tests are inputs and outputs, and NOT the logic between them. Meaning, for example, if we are testing a component that will give us a random number as a result, where we will specify the minimum and maximum number, our inputs will be the lowest number and the highest number (the range) and the output will be our random number. We are not interested in the steps how that result is calculated, just the inputs and outpust. That gives us the flexibility to change or optimize the logic, but the tests should not fail if we do that.
 
 Try to keep test methods short and sweet and add them to the build.
 

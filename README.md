@@ -58,10 +58,11 @@ Follow these steps for the most basic jest setup:
   * Avoid side effects that children components can have, such as making HTTP calls, calling store actions...
 
 ### Sanity test
+Sanity tests will obviously always have to pass. We are writing them to see that if they somehow fail, we probably didn't set up something right.
 ```javascript
 describe('Component.vue', () => {
   test('sanity test', () => {
-    expect(true).toBe(true)
+    expect(true).toBe(true) // will obviously always pass
   })
 })
 ```

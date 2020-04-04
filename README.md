@@ -55,12 +55,13 @@ Follow these steps for the most basic jest setup:
 5. Write tests in the ```Component.spec.js``` file and run it with ```npm run unit```
 
 ### Things you'll almost always use
-(1) use ```mount``` to mount the component and store it in ```wrapper```
-(2) access ```data``` in a component
-(3) change a variable in ```data``` in a component
-(4) find an element in a component and check it's properties 
-(5) trigger events like ```click``` on an element
-(6) check if a component has an html element 
+* (1) use ```mount``` to mount the component and store it in ```wrapper```
+* (2) access ```data``` in a component
+* (3) change a variable in ```data``` in a component
+* (4) find an element in a component and check it's properties 
+* (5) trigger events like ```click``` on an element
+* (6) check if a component has an html element 
+* (7) manually pass props to a component
 
 
 ### Frequent terminology

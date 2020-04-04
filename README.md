@@ -23,6 +23,8 @@ Where is the right balance between what to test and what not to test? We can con
 
 It's also important to say that we have to tests are inputs and outputs, and NOT the logic between them. Meaning, for example, if we are testing a component that will give us a random number as a result, where we will specify the minimum and maximum number, our inputs will be the lowest number and the highest number (the range) and the output will be our random number. We are not interested in the steps how that result is calculated, just the inputs and outpust. That gives us the flexibility to change or optimize the logic, but the tests should not fail if we do that.
 
+Also, we shouldn't test the framework we are using not the 3rd party libraries. We have to assume they are tested.
+
 Try to keep test methods short and sweet and add them to the build.
 
 ## Setuping jest 

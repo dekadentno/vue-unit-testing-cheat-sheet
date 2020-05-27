@@ -13,6 +13,7 @@ Useful links:
 * [expect](https://jestjs.io/docs/en/expect)
 * [jest-serializer-vue-tjw](https://github.com/tjw-lint/jest-serializer-vue-tjw)
 * https://github.com/sapegin/jest-cheat-sheet
+* [Vue-Test-Utils Guide: Things You Might Not Know About Vue-Test-Utils](https://webdevetc.com/blog/vue-test-utils-advanced-features?__s=xxxxxxx)
 
 ## A few words before
 Where is the right balance between what to test and what not to test? We can consider writing unit tests in cases like:

@@ -15,6 +15,7 @@ Useful links:
 * https://github.com/sapegin/jest-cheat-sheet
 * [Vue-Test-Utils Guide: Things You Might Not Know About Vue-Test-Utils](https://webdevetc.com/blog/vue-test-utils-advanced-features?__s=xxxxxxx)
 * [Vue testing handbook](https://lmiller1990.github.io/vue-testing-handbook)
+* [Testing vuex actions](https://lmiller1990.github.io/vue-testing-handbook/vuex-actions.html#creating-the-action)
 
 ## A few words before
 Where is the right balance between what to test and what not to test? We can consider writing unit tests in cases like:
@@ -220,7 +221,7 @@ it("returns the string in normal order", () => {
 ```
 
 ### Vuex actions 
-Before testing anything from the vuex store, we need to "mock" (make dummy / hardcode) the store values that we want to test. In the case beneath, we simulated the result of the getComments async action to give us 2 comments.
+Before testing anything from the vuex store, we need to "mock" (make dummy / hardcode) the store values that we want to test. In the case beneath, we simulated the result of the getComments async action to give us 2 comments. Read more [https://lmiller1990.github.io/vue-testing-handbook/vuex-actions.html#creating-the-action](here)
 ```javascript
 import Vuex from 'vuex'
 import { shallow, createLocalVue } from '@vue/test-utils'
